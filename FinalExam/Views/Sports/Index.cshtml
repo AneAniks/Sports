@@ -1,0 +1,20 @@
+﻿@model IEnumerable<FinalExam.Models.Sport>
+@using FinalExam.Models;
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <h2>Sports List</h2>
+    @Html.ActionLink("Create new sport", "Create")
+
+    <ul>
+        @foreach (Sport sport in @Model)
+        {
+            <li>@Html.ActionLink(sport.SportName, "Index", "Players", new { id = sport.SportId }, null)</li>
+        }
+    </ul>
+</div>
