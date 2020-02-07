@@ -29,18 +29,18 @@ namespace FinalExam.Controllers
         }
 
         // GET: api/SportsAPI/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Sport>> GetSport(int id)
-        {
-            var sport = await _context.Sport.FindAsync(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<Sport>> GetSport(int id)
+        //{
+        //    var sport = await _context.Sport.FindAsync(id);
 
-            if (sport == null)
-            {
-                return NotFound();
-            }
+        //    if (sport == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return sport;
-        }
+        //    return sport;
+        //}
 
         // PUT: api/SportsAPI/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
@@ -77,30 +77,30 @@ namespace FinalExam.Controllers
         // POST: api/SportsAPI
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
-        public async Task<ActionResult<Sport>> PostSport(Sport sport)
-        {
-            _context.Sport.Add(sport);
-            await _context.SaveChangesAsync();
+        //[HttpPost]
+        //public async Task<ActionResult<Sport>> PostSport(Sport sport)
+        //{
+        //    _context.Sport.Add(sport);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetSport", new { id = sport.SportId }, sport);
-        }
+        //    return CreatedAtAction("GetSport", new { id = sport.SportId }, sport);
+        //}
 
         // DELETE: api/SportsAPI/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Sport>> DeleteSport(int id)
-        {
-            var sport = await _context.Sport.FindAsync(id);
-            if (sport == null)
-            {
-                return NotFound();
-            }
+        //[HttpDelete("{id}")]
+        //public async Task<ActionResult<Sport>> DeleteSport(int id)
+        //{
+        //    var sport = await _context.Sport.FindAsync(id);
+        //    if (sport == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            _context.Sport.Remove(sport);
-            await _context.SaveChangesAsync();
+        //    _context.Sport.Remove(sport);
+        //    await _context.SaveChangesAsync();
 
-            return sport;
-        }
+        //    return sport;
+        //}
 
         private bool SportExists(int id)
         {
